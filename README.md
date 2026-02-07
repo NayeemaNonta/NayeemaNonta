@@ -1,4 +1,4 @@
-# Nayeema Nonta — Personal Website
+# Nayeema Nonta
 
 Personal homepage for Nayeema Nonta, MASc student and AI researcher at the University of Waterloo.
 
