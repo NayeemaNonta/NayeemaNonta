@@ -1,468 +1,792 @@
 <!DOCTYPE html>
-<!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    https://github.com/mavroudisv/plain-academic
-
-    Modifications by Nayeema Nonta
-    Some code generated with assistance from AI
--->
-
 <html lang="en">
 <head>
-  <title>Nayeema Nonta</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <title>Nayeema Nonta</title>
+  <meta name="description" content="Nayeema Nonta — AI researcher at University of Waterloo. LLM safety, efficient training, NeurIPS 2025.">
+  <meta name="keywords" content="Nayeema Nonta, AI researcher, machine learning, LLM, NeurIPS, University of Waterloo">
   <link rel="icon" type="image/x-icon" href="NNLogo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --bg-alt: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #404040;
+      --text-muted: #888;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e5e5e5;
+      --border-light: #f0f0f0;
+      --serif: 'Newsreader', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ===== Header ===== */
+    header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-content {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .header-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--border);
+    }
+
+    .header-text h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .header-tagline {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .header-links a {
+      color: var(--text-muted);
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .header-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .header-links span {
+      color: var(--border);
+      font-size: 0.8rem;
+    }
+
+    /* ===== Nav ===== */
+    nav {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 0.85rem 0;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* ===== About ===== */
+    .about p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ===== News ===== */
+    .news-item {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1.25rem 0;
+    }
+
+    .news-item + .news-item {
+      border-top: 1px solid var(--border-light);
+    }
+
+    .news-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--border-light);
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 0.3rem;
+    }
+
+    .news-content h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+    }
+
+    .news-content h3 a {
+      color: var(--text);
+    }
+
+    .news-content h3 a:hover {
+      color: var(--accent);
+    }
+
+    .news-content p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .news-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(37, 99, 235, 0.08);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ===== Experience (Flat Resume) ===== */
+    .resume-list {
+      list-style: none;
+    }
+
+    .resume-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      align-items: baseline;
+    }
+
+    .resume-item + .resume-item {
+      border-top: 1px solid var(--border-light);
+    }
+
+    .resume-dates {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      padding-top: 0.05rem;
+    }
+
+    .resume-details h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 0.1rem;
+    }
+
+    .resume-details .company {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .resume-details p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-top: 0.3rem;
+    }
+
+    .resume-details ul {
+      list-style: disc;
+      padding-left: 1.15rem;
+      margin-top: 0.35rem;
+    }
+
+    .resume-details li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ===== Education ===== */
+    .edu-item {
+      padding: 0.85rem 0;
+    }
+
+    .edu-item h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .edu-meta {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== Publications ===== */
+    .pub-item {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      align-items: start;
+    }
+
+    .pub-item + .pub-item {
+      border-top: 1px solid var(--border-light);
+    }
+
+    .pub-image {
+      width: 100%;
+      aspect-ratio: 12/10;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--border-light);
+    }
+
+    .pub-info h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-venue {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: #b45309;
+      background: rgba(180, 83, 9, 0.08);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+    }
+
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-info p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .pub-links a {
+      font-size: 0.8rem;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .pub-links a i {
+      font-size: 0.75rem;
+    }
+
+    /* ===== Projects ===== */
+    .project-item {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      align-items: start;
+    }
+
+    .project-item + .project-item {
+      border-top: 1px solid var(--border-light);
+    }
+
+    .project-image {
+      width: 90%;
+      aspect-ratio: 15/10;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .project-info h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-collaborators {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .project-links a {
+      font-size: 0.8rem;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .project-links a i {
+      font-size: 0.75rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      header { padding: 2.5rem 0 2rem; }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-links { justify-content: center; }
+
+      .header-text h1 { font-size: 1.6rem; }
+
+      nav ul {
+        gap: 1.25rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .resume-item {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+
+      .news-item,
+      .pub-item,
+      .project-item {
+        grid-template-columns: 1fr;
+      }
+
+      .news-image,
+      .pub-image,
+      .project-image {
+        max-width: 300px;
+      }
+    }
+  </style>
 </head>
 
-<style>
-  body {
-    font-family: 'Oswald', sans-serif;
-    margin-top: 20px;
-  }
-  .navbar-inverse {
-    background-color: #333;
-    border-color: #333;
-  }
-  .navbar-inverse .navbar-brand, 
-  .navbar-inverse .navbar-nav > li > a {
-    color: white;
-  }
-  .profile-image {
-    border-radius: 8%;
-    border: 5px solid white;    /* White border around the image */
-    width: 200px;
-    height: 220px;
-    object-fit: cover;
-    margin-top: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Drop shadow */
-    justify-content: center;
-  }
-  .about-section {
-    margin-top: 30px;
-  }
-  .social-icons a{
-    color: #333;
-    padding: 15px;
-    font-size: 24px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-  }
-  .social-icons a:hover {
-    opacity: 0.7;
-  }
-  .btn {
-    margin-top: 5px;
-    margin-right: 5px;
-    border-radius: 20px; /* Adjust the value to make the shape more pill-like */
-    font-family: Arial, Helvetica, sans-serif;
-    border-color: slategray;
-    padding: 2px 20px; /* Adjust padding to make the button pill-shaped */
-}
-  .header {
-    /* display: flex; */
-    justify-content: center;
-    /* align-items: center; */
-    text-align: center;
-  }
-
-.container {
-    /* display: flex;  */
-    justify-content: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 5%;
-
-  }
-
-.timeline-container {
-    padding-bottom: 1%;
-    padding-top: 1%;
-    position: relative;
-    width: 100%;
-}
-
-.timeline-container.left {
-    left: 0;
-}
-
-.timeline-grid {
-  display: grid;
-  grid-template-columns: 100px 1fr; /* 100px for the image, auto for content */
-  gap: 2%; /* Space between image and content */
-  /* align-items: stretch; */
-}
-
-.timeline-grid-projects {
-  display: grid;
-  grid-template-columns: 30% 1fr; 
-  gap: 2%; /* Space between image and content */
-  /* align-items: stretch; */
-}
-
-.timeline-container .content {
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
-    
-}
-
-.timeline-container.left .content {
-    margin-right: auto;
-}
-
-.timeline-container .image-box {
-    width: 100%; /* Adjust as needed */
-    /* height: 100%; Adjust as needed */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Hide overflow */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
-  }
-
-  .timeline-container .image-box-projects {
-    width: 100%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Hide overflow */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
-    justify-content: center;
-  }
-
-
-.timeline-container .image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 8px;
-  }
-
-  .timeline-container .image-box-projects img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-.timeline-container h2 {
-    font-size: 1.1em;
-    margin: 0;
-}
-
-.timeline-container h3 {
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 5px 0;
-}
-
-
-.timeline-container p {
-    margin: 5px 0 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-@media screen and (max-width: 768px) {
-    .timeline-container {
-        width: 100%;
-        left: 0 !important;
-        padding-left: 0px;
-    }
-
-    .timeline-container::after {
-        left: 20px;
-    }
-}
-</style>
-
 <body>
-  
-  <!-- Page Content -->
-    <div class="container">
-      <div class="header">
-          <img class="profile-image" src="pic.JPG" alt="Profile Image">
-          <h1>Nayeema Nonta</h1, style="text-align: center;">
-            <hr>
-            <div class="social-icons">
-              <a href="mailto:nnonta@uwaterloo.ca"><i class="fa fa-envelope"></i></a>
-              <a href="https://github.com/NayeemaNonta"><i class="fa fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/nayeema-nonta/"><i class="fa fa-linkedin"></i></a>
-              <!-- <i class="fa fa-map-marker"></i> <span class="location-text">Toronto, ON</span> -->
-            </div>
-      </div>
 
-      <hr>
+  <div class="container">
 
-      <div class="row"> 
-        <h2>About Me</h2>
-        <p class="lead",  style="font-family: Arial, sans-serif; font-weight: normal; text-align: justify;">I hold a Bachelor of Applied Science in Management Engineering with Computing Option from the University of Waterloo. My academic journey has equipped me with a unique blend of skills in data analysis, machine learning, and optimization.
-          I completed six co-op internships that allowed me to apply my skills in diverse industries. I am currently working as a research assistant for Prof. <a href="https://uwaterloo.ca/management-science-engineering/profile/fgzara">Fatma Gzara</a> at the University of Waterloo. I recently also joined the Critical ML Lab at University of Waterloo as a research Assistant.</p>
-      </div>
-      
-      <div class="row">
-        <h2>Education</h2>
-        <div class="timeline-container left">
-          <div class="timeline-grid">
-            <div class="image-box">
-              <img src="Logos/University_of_Waterloo_seal.svg.png" alt="Waterloo Logo Image">
-            </div>
-            <div class="content">
-              <h2>Bachelor of Applied Science in <a href="https://uwaterloo.ca/future-students/programs/management-engineering">Management Engineering</a> with <a hred="https://uwaterloo.ca/academic-calendar/undergraduate-studies/catalog#/programs/HklAkk00j2?group=Options%3A%20Faculty%20of%20Engineering&bc=true&bcCurrent=Computing%20Option&bcGroup=Options%3A%20Faculty%20of%20Engineering&bcItemType=programs">Computing Option</a> </h2>
-              <h3>University of Waterloo | 2019 - 2024 </h3>
-              <p>Relevant Courses: Alogrithms and Data Structures, Principals of Software Engineering, Probability and Statistics 2, Stochastic Models and Methods, Deterministic Optimization Models and Methods, Human-Computer Interaction, Advanced Machine Learning</p>
-            </div>
+    <!-- Header -->
+    <header>
+      <div class="header-content">
+        <img class="header-image" src="./images/NN.png" alt="Nayeema Nonta">
+        <div class="header-text">
+          <h1>Nayeema Nonta</h1>
+          <p class="header-tagline">Engineering Master's Student &amp; Research Assistant at the University of Waterloo. </p>
+          <div class="header-links">
+            <a href="mailto:nnonta@uwaterloo.ca" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <span>|</span>
+            <a href="https://github.com/NayeemaNonta" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <span>|</span>
+            <a href="https://www.linkedin.com/in/nayeema-nonta/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
+      </div>
+    </header>
 
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <h2 class="section-heading">About / Research Interests</h2>
+      <p>I am a Master's student at the University of Waterloo, supervised by Prof. <a href="https://sirisharambhatla.com/">Sirisha Rambhatla</a>. My research focuses on safe post-training adaptation of large language models (LLMs), spanning tamper-resistance evaluation and parameter-efficient fine-tuning (PEFT) methods.</p>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2 class="section-heading">Publications</h2>
+
+      <div class="pub-item">
+        <img class="pub-image" src="./images/subtrack.png" alt="SubTrack++">
+        <div class="pub-info">
+          <div class="pub-venue">NeurIPS 2025</div>
+          <h3>SubTrack++ : Gradient Subspace Tracking for Scalable LLM Training</h3>
+          <p class="pub-authors">Sahar Rajabi, <strong>Nayeema Nonta</strong>, Sirisha Rambhatla</p>
+          <p>Training large language models (LLMs) is highly resource-intensive due to their
+              massive number of parameters and the overhead of optimizer states. While recent
+              work has aimed to reduce memory consumption, such efforts often entail trade-offs
+              among memory efficiency, training time, and model performance. Yet, true democratization of LLMs requires simultaneous progress across all three dimensions. To
+              this end, we propose SubTrack++ that leverages Grassmannian gradient subspace
+              tracking combined with projection-aware optimizers, enabling Adam's internal
+              statistics to adapt to subspace changes. Additionally, employing recovery scaling,
+              a technique that restores information lost through low-rank projections, further
+              enhances model performance. Our method demonstrates SOTA convergence by exploiting Grassmannian geometry, reducing training wall-time by up to 65% compared to the best performing baseline, LDAdam, while preserving the reduced memory footprint. </p>
+          <div class="pub-links">
+            <a href="https://openreview.net/pdf?id=6geRIdlFWJ" target="_blank"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="https://neurips.cc/media/neurips-2025/Slides/119775.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Slides</a>
+            <a href="https://github.com/criticalml-uw/SubTrack" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
       </div>
 
-      <section id="WorkExperience">
-      <div class="row"> 
-        <h2>Experience</h2>
+    </section>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/University_of_Waterloo_seal.svg.png" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>Undergraduate Research Assistant</h2>
-                <h3>University of Waterloo | December 2024 - Present </h3>
-                
-                <p>Research assistant at the Critical ML Lab. </p>
-                
-                <br>
-                
-                <h3>University of Waterloo | January 2024 - Present </h3>
-                
-                <p>UAV flight path optimization research with Prof. <a href="https://uwaterloo.ca/management-science-engineering/profile/fgzara">Fatma Gzara</a>.</p>
-              </div>
-            </div>
-          </div>
+    <!-- News -->
+    <section id="news">
+      <h2 class="section-heading">News</h2>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/coreavi_logo.jpeg" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>Machine Learning Software Developer Intern</h2>
-                <h3>CoreAVI | September 2023 - December 2023</h3>
-                <p>Worked on computer vision projects and CoreAVI's <a href="https://coreavi.com/product_category/computer-vision-vulkan-compute/">safety critical AI/ML Library</a>.</p>
-              </div>
-            </div>
-          </div>
+      <div class="news-item">
+        <img class="news-image" src="./images/subtrack_news.png" alt="Making powerful AI more accessible to everyone">
+        <div class="news-content">
+          <div class="news-date">Dec 2025</div>
+          <div class="news-tag">Media</div>
+          <h3><a href="https://uwaterloo.ca/news/media/making-powerful-ai-more-accessible-everyone" target="_blank">Making powerful AI more accessible to everyone</a></h3>
+          <p>Featured in UWaterloo News for our work on SubTrack++, an advanced training technique that accelerates large language model pre-training by up to 65% while maintaining state-of-the-art accuracy &mdash; helping democratize AI by reducing computational costs.</p>
+        </div>
+      </div>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/npx.jpg" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>Innovation Catalyst Intern</h2>
-                <h3>Nuclear Promise X (NPX) | January 2023 - April 2023</h3>
-                <p>Improved Nuclear Project Management Information Systems using Microsoft Power Platform and AI tools.</p>
-              </div>
-            </div>
-          </div>
+    </section>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/coreavi_logo.jpeg" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>System Administrator Intern</h2>
-                <h3>CoreAVI | May 2022 - August 2022</h3>
-                <p>Optimized IT processes and managing company-wide endpoint devices.</p>
-              </div>
-            </div>
-          </div>
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-heading">Experience</h2>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/nissan.jpg" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>Business Systems Intern</h2>
-                <h3>Nissan | September 2021 - December 2021</h3>
-                <p>Managed software tools used by departments in Nissan Canada Finance (NCF).</p>
-              </div>
-            </div>
+      <ul class="resume-list">
+        <li class="resume-item">
+          <div class="resume-dates">Dec 2024 &ndash; Present</div>
+          <div class="resume-details">
+            <h3>Machine Learning Research Assistant</h3>
+            <div class="company">University of Waterloo, <a href="https://sirisharambhatla.com/criticalml/">Critical ML Lab</a> </div>
           </div>
+        </li>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/sentia.png" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>IT Solution Specialist Intern</h2>
-                <h3>Sentia | January 2021 - May 2021</h3>
-                <p>Improved change management workflows and worked on internal IT process improvement projects.</p>
-              </div>
-            </div>
+        <li class="resume-item">
+          <div class="resume-dates">Jan 2024 &ndash; Present</div>
+          <div class="resume-details">
+            <h3>Undergraduate Research Assistant</h3>
+            <div class="company">University of Waterloo, UAV Flight Path Planning Optimzation w/ Prof. <a href="https://uwaterloo.ca/management-science-engineering/profile/fgzara">Fatma Gzara</a></div>
+            <!-- <p>UAV flight path optimization with Prof. <a href="https://uwaterloo.ca/management-science-engineering/profile/fgzara">Fatma Gzara</a>.</p> -->
           </div>
+        </li>
 
-          <div class="timeline-container left">
-            <div class="timeline-grid">
-              <div class="image-box">
-                <img src="Logos/University_of_Waterloo_seal.svg.png" alt="Work Experience Image">
-              </div>
-              <div class="content">
-                <h2>Digital Retention Analyst Intern</h2>
-                <h3>University of Waterloo | June 2020 - August 2020</h3>
-                <p>Created solutions for efficient communication in online learning.</p>
-              </div>
-            </div>
+        <li class="resume-item">
+          <div class="resume-dates">Sep &ndash; Dec 2023</div>
+          <div class="resume-details">
+            <h3>ML Software Developer Intern</h3>
+            <div class="company">CoreAVI, Research and Innovation Team</div>
           </div>
+        </li>
+
+        <li class="resume-item">
+          <div class="resume-dates">Jan &ndash; Apr 2023</div>
+          <div class="resume-details">
+            <h3>Innovation Catalyst Intern</h3>
+            <div class="company">Nuclear Promise X (NPX), Rapid App Development Team</div>
+          </div>
+        </li>
+
+        <li class="resume-item">
+          <div class="resume-dates">May &ndash; Aug 2022</div>
+          <div class="resume-details">
+            <h3>System Administrator Intern</h3>
+            <div class="company">CoreAVI, IT Operations Team</div>
+          </div>
+        </li>
+
+        <li class="resume-item">
+          <div class="resume-dates">Sep &ndash; Dec 2021</div>
+          <div class="resume-details">
+            <h3>Business Systems Intern</h3>
+            <div class="company">Nissan, Nissan Canada Finance Business Systems Team</div>
+          </div>
+        </li>
+
+        <li class="resume-item">
+          <div class="resume-dates">Jan &ndash; May 2021</div>
+          <div class="resume-details">
+            <h3>IT Solution Specialist Intern</h3>
+            <div class="company">Sentia, IT Operations Team</div>
+          </div>
+        </li>
+
+        <li class="resume-item">
+          <div class="resume-dates">Jun &ndash; Aug 2020</div>
+          <div class="resume-details">
+            <h3>Digital Retention Analyst Intern</h3>
+            <div class="company">University of Waterloo, Department of Management Engineering</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-heading">Education</h2>
+
+      <div class="edu-item">
+        <h3>MASc, Management Engineering and Sciences (Thesis)</h3>
+        <div class="edu-meta">University of Waterloo, 2025 &ndash; Present</div>
+        <p>Supervised by Prof. <a href="https://sirisharambhatla.com/">Sirisha Rambhatla</a></p>
+      </div>
+
+      <div class="edu-item">
+        <h3>BASc, Management Engineering (Computing Option)</h3>
+        <div class="edu-meta">University of Waterloo, 2019 &ndash; 2024</div>
+        <!-- <p>Algorithms &amp; Data Structures, Software Engineering, Probability &amp; Statistics, Stochastic Models, Deterministic Optimization, Human-Computer Interaction, Advanced Machine Learning</p> -->
       </div>
     </section>
-    
-    <div class="row">
-      <section id="Projects">
-        <h2>Projects</h2>
 
-        <div class="timeline-container left">
-          <div class="timeline-grid-projects">
-            <div class="image-box-projects">
-              <img src="ElectriFly/ElectriFly.png" alt="Project Image">
-            </div>
-            <div class="content">
-              <h2>ElectriFly - Electric Plane Data Analysis & Decision Support Platform</h2>
-              <h3>May 2023 - April 2024</h3>
-              
-              <br>
-              <p>Engineering Final Year Design Project (FYDP) at University of Waterloo. Electric planes offer a promising alternative to traditional aircraft. 
-                However, e-planes bring on new challenges including limited battery capacity and scarce knowledge of their performance in Canadian weather. 
-                ElectriFly uses data from the Pipistrel Velis Electro, the world’s first type certified electric plane. 
-                Our platform enables researchers to analyze flight data and create a battery management strategy for the optimal operation of the electric plane. 
-                Leveraging machine learning, ElectriFly optimizes flight schedules based on weather forecasts and improves flight planning by predicting battery consumption.</p>
-              <br>
-              <p><em>With Meenakshi Andoorveedu, Peter Twarecki, Joanna Yang, Vikram Bhatt</em></p>
-              <a href="ElectriFly/ElectriFly Report.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Report</a>
-              <a href="ElectriFly/ElectriFly Slides.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Slides</a>
-              <a href="ElectriFly/ElectriFlyPoster.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Poster</a>
-              <a href="https://github.com/twarep/electrifly" class="btn" target="_blank"><i class="fa fa-github"></i> Code</a>
-              <a href="https://electrifly.uwaterloo.ca/" class="btn" target="_blank"><i class="fa fa-bar-chart"></i> Site (not maintained)</a>
-              
+    <!-- Leadership -->
+    <section id="leadership">
+      <h2 class="section-heading">Leadership</h2>
 
-            </div>
+      <ul class="resume-list">
+        <li class="resume-item">
+          <div class="resume-dates">Sep 2025 &ndash; Present</div>
+          <div class="resume-details">
+            <h3>Equity, Diversity, and Inclusion (EDI) Director</h3>
+            <div class="company">Women in Engineering (WiE), University of Waterloo</div>
+            <ul>
+              <li>Served as primary point of contact for 14 industry partners for the WiE Graduate Career Fair; coordinated logistics, schedules, and booth details to ensure an effective employer&ndash;student experience.</li>
+              <!-- <li>Co-led planning and delivery of EDI-focused programming, including an EDI panel and a graduate research roundtable; supported community-building and professional development for graduate students.</li> -->
+              <li>Coordinated planning and partner communications for collaboration with the Canadian charity Help a Girl Out (HAGO), including logistics for a panel and period-product collection drive.</li>
+            </ul>
           </div>
-        </div>
+        </li>
 
-        <div class="timeline-container left">
-          <div class="timeline-grid-projects">
-            <div class="image-box-projects">
-              <img src="UsedCarPricePrediction/usedcarpredictionresults.png" alt="Project Image">
-            </div>
-            <div class="content">
-              <h2>Exploring Feature Importance and Advanced Modeling Techniques for Accurate Car Price Estimation</h2>
-              <h3>March 2024 </h3>
-              <br>
-              <p>MSCI 546: Advanced Machine Learning final project at University of Waterloo. 
-                This project aims to predict used car prices using a <a href="https://www.kaggle.com/datasets/ananaymital/us-used-cars-dataset">Kaggle</a> dataset of the US market. 
-                We applied and iterated on several machine learning models, including Linear Regression, Ridge Regression, Random Forest, XGBoost, and Feedforward Neural Networks, to estimate prices based on features like make, model, and mileage. 
-                Our analysis also focused on studying feature importance, revealing that mileage and car make were significant predictors.
-                This project provides valuable insights for buyers and financial institutions, enhancing accuracy in car valuations and market analysis.</p>
-
-              <br>
-              <p><em>With Meenakshi Andoorveedu, Peter Twarecki, Joanna Yang </em></p>
-              <a href="UsedCarPricePrediction/UsedCarPricePRediction_Report.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Slides</a>
-              <a href="https://github.com/NayeemaNonta/UsedCarPricePredictionsMLProject/tree/main" class="btn" target="_blank"><i class="fa fa-github"></i> Code</a>
-            </div>
+        <li class="resume-item">
+          <div class="resume-dates">Sep 2019 &ndash; Dec 2023</div>
+          <div class="resume-details">
+            <h3>Engineering Ambassador / Orientation Leader &amp; Director</h3>
+            <div class="company">Engineering Society, University of Waterloo</div>
+            <ul>
+              <li>Led 10 leaders delivering programming for 1,800+ first-year students; supported recruitment/outreach.</li>
+            </ul>
           </div>
-        </div>
-
-        <div class="timeline-container left">
-          <div class="timeline-grid-projects">
-            <div class="image-box-projects">
-              <img src="RMP/SentimentAnalysisRMP.png" alt="Project Image">
-            </div>
-            <div class="content">
-              <h2>Sentiment Analysis Project -  ratemyprofessors.com</h2>
-              <h3>January 2022 - March 2022 </h3>
-              <br>
-              <p>MSCI 446: Introduction Machine Learning final project at University of Waterloo. 
-                As learning styles evolve, it makes it imperative for Professors to adapt and improve the quality of their course and teaching delivery. 
-                A popular platform where students provide feedback for Professors is <a href="https://www.ratemyprofessors.com/">ratemyprofessors.com</a>. 
-                Our team has decided to analyze the reviews from students by exploring the comments left by students as well as the tags/categories they selected to describe the Professor. 
-                In our business problems we want to identify what makes a “Good Professor” versus a “Bad Professor” based on student perception and experiences. We explore supervised methods: logistic regression and naive bayes, as well as unsupervised method: Apriori algorithm. 
-              </p>
-
-              <br>
-              <p><em>With Meenakshi Andoorveedu </em></p>
-              <a href="RMP/RMPSentimentAnalysis_Report.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Report</a>
-              <a href="https://github.com/NayeemaNonta/RatemyprofessorsMLProject" class="btn" target="_blank"><i class="fa fa-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-container left">
-          <div class="timeline-grid-projects">
-            <div class="image-box-projects">
-              <img src="BankChurn/BankChurnROC.png" alt="Project Image">
-            </div>
-            <div class="content">
-              <h2>Decoding Customer Churn: Predictive Analytics and Optimization Strategies for Mitigating Customer Attrition in the Banking Industry</h2>
-              <h3>March 2024 - April 2024</h3>
-              <br>
-              <p>MSCI 433: Applications of Management Engineering final project at University of Waterloo.
-                This project tackles the issue of customer churn in the banking industry based on a <a href="https://www.kaggle.com/datasets/pentakrishnakishore/bank-customer-churn-data/data?select=churn_prediction.csv">Kaggle</a> dataset.
-                Our team played with various models, including neural networks and SVMs, which produced the best AUC scores and best at spotting potential churners.
-                We also developed optimization models to minimize overall churn rates given a finite budget for retention efforts. 
-                This multi-faceted approach combines descriptive analytics, predictive modeling, and prescriptive optimization to provide banks with actionable insights.
-              </p>
-
-              <br>
-              <p><em>With Cuthbert Liaw, Yali Chen</em></p>
-              <a href="BankChurn/BankChurnPart1.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Report Part 1</a>
-              <a href="BankChurn/BankChurnPart2.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Report Part 2</a>
-              <a href="BankChurn/BankChurn_Slides.pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Slides</a>
-              <a href="https://github.com/NayeemaNonta/BankChurn-Multi-Tier-Promotion-Strategy" class="btn" target="_blank"><i class="fa fa-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="timeline-container left">
-          <div class="timeline-grid-projects">
-            <div class="image-box-projects">
-              <img src="AIProblemChallenge/LogoFaceChallenge.png"Project Image">
-            </div>
-            <div class="content">
-              <h2>AI Problem Challenge – Creating Logo/Face Recognition Model Solution Overview</h2>
-              <h3>August 2024</h3>
-              <br>
-              <p>For a 24-hour machine learning challenge, I developed a solution to perform logo and face recognition from videos. 
-                The task involved dataset generation, model development, and predictions on video streams. 
-                The goal was to create separate models for logo and face detection, each optimized for its specific task while maintaining accuracy above 95%. 
-                The approach employed public datasets, data augmentation, and iterative model improvement. The final solution included bounding box accuracy metrics and classification accuracy to ensure high performance.
-              </p>
-
-              <br>
-              <a href="AIProblemChallenge/AI Problem Challenge – Creating Logo:Face Recognition Model .pdf" class="btn" target="_blank"><i class="fa fa-file-o"></i> Report </a>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
+        </li>
+      </ul>
     </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-heading">Projects</h2>
+
+      <div class="project-item">
+        <img class="project-image" src="ElectriFly/ElectriFly.png" alt="ElectriFly">
+        <div class="project-info">
+          <h3>ElectriFly &mdash; Electric Plane Data Analysis &amp; Decision Support</h3>
+          <div class="project-meta">May 2023 &ndash; Apr 2024 &middot; Engineering Capstone Project</div>
+          <p>Built a platform for analyzing flight data from the Pipistrel Velis Electro, the world's first type-certified electric plane. Leverages ML to optimize flight schedules based on weather forecasts and predict battery consumption for Canadian conditions.</p>
+          <p class="project-collaborators">With Meenakshi Andoorveedu, Peter Twarecki, Joanna Yang, Vikram Bhatt</p>
+          <div class="project-links">
+            <a href="ElectriFly/ElectriFly Report.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Report</a>
+            <a href="ElectriFly/ElectriFly Slides.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Slides</a>
+            <a href="ElectriFly/ElectriFlyPoster.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Poster</a>
+            <a href="https://github.com/twarep/electrifly" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="https://electrifly.uwaterloo.ca/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="project-item">
+        <img class="project-image" src="UsedCarPricePrediction/usedcarpredictionresults.png" alt="Used Car Price Prediction">
+        <div class="project-info">
+          <h3>Feature Importance &amp; Advanced Modeling for Car Price Estimation</h3>
+          <div class="project-meta">March 2024 &middot; MSCI 546: Advanced Machine Learning</div>
+          <p>Predicting used car prices with Linear Regression, Ridge, Random Forest, XGBoost, and Neural Networks on a US Kaggle dataset. Feature importance analysis revealed mileage and make as top predictors.</p>
+          <p class="project-collaborators">With Meenakshi Andoorveedu, Peter Twarecki, Joanna Yang</p>
+          <div class="project-links">
+            <a href="UsedCarPricePrediction/UsedCarPricePRediction_Report.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Report</a>
+            <a href="https://github.com/NayeemaNonta/UsedCarPricePredictionsMLProject/tree/main" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="project-item">
+        <img class="project-image" src="RMP/SentimentAnalysisRMP.png" alt="Sentiment Analysis RMP">
+        <div class="project-info">
+          <h3>Sentiment Analysis &mdash; ratemyprofessors.com</h3>
+          <div class="project-meta">Jan &ndash; Mar 2022 &middot; MSCI 446: Intro to Machine Learning</div>
+          <p>Explored what makes a "Good Professor" vs. "Bad Professor" using supervised methods (Logistic Regression, Naive Bayes) and the Apriori algorithm on student reviews and tags.</p>
+          <p class="project-collaborators">With Meenakshi Andoorveedu</p>
+          <div class="project-links">
+            <a href="RMP/RMPSentimentAnalysis_Report.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Report</a>
+            <a href="https://github.com/NayeemaNonta/RatemyprofessorsMLProject" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="project-item">
+        <img class="project-image" src="BankChurn/BankChurnROC.png" alt="Bank Churn Prediction">
+        <div class="project-info">
+          <h3>Decoding Customer Churn: Predictive Analytics &amp; Optimization in Banking</h3>
+          <div class="project-meta">Mar &ndash; Apr 2024 &middot; MSCI 433: Applications of Mgmt. Eng.</div>
+          <p>Tackled bank customer churn with neural networks and SVMs, then built optimization models to minimize churn given a finite retention budget. Combines descriptive analytics, predictive modeling, and prescriptive optimization.</p>
+          <p class="project-collaborators">With Cuthbert Liaw, Yali Chen</p>
+          <div class="project-links">
+            <a href="BankChurn/BankChurnPart1.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Report Pt. 1</a>
+            <a href="BankChurn/BankChurnPart2.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Report Pt. 2</a>
+            <a href="BankChurn/BankChurn_Slides.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Slides</a>
+            <a href="https://github.com/NayeemaNonta/BankChurn-Multi-Tier-Promotion-Strategy" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <footer>
+      <p>&copy; 2025 Nayeema Nonta</p>
+    </footer>
+
   </div>
 
-    </div>
-    <!-- /.container -->
-    
-    <!-- Other people may like it too! -->
-    <!-- <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a>  -->
-    
 </body>
-
 </html>
