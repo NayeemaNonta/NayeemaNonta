@@ -2,21 +2,6 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    title: "ElectriFly - Electric plane data analysis and decision support",
-    description:
-      "A capstone platform for analyzing Pipistrel Velis Electro flight data, optimizing schedules with weather forecasts, and predicting battery consumption in Canadian conditions.",
-    tags: ["Machine learning", "Decision support", "Aviation", "Optimization"],
-    dateRange: "May 2023-Apr 2024",
-    image: "/ElectriFly/ElectriFly.png",
-    imageAlt: "ElectriFly project interface",
-    collaborators: "Meenakshi Andoorveedu, Peter Twarecki, Joanna Yang, Vikram Bhatt",
-    links: [
-      { label: "Slides", href: "/ElectriFly/ElectriFly%20Slides.pdf", type: "slides" },
-      { label: "Poster", href: "/ElectriFly/ElectriFlyPoster.pdf", type: "poster" }
-    ],
-    awards: ["Management Engineering Design Award", "Gregory Zhang - e-Zinc Award"]
-  },
-  {
     title: "Lightweight adaptation for sequential recommenders",
     description:
       "A study of post-deployment adaptation for SASRec, comparing last-block fine-tuning, context-gated adapters, and prototype steering with a shared evaluation protocol.",
@@ -42,5 +27,20 @@ export const projects: Project[] = [
         type: "slides"
       }
     ]
+  },
+  {
+    title: "ElectriFly - Electric plane data analysis and decision support",
+    description:
+      "A capstone platform for analyzing Pipistrel Velis Electro flight data, optimizing schedules with weather forecasts, and predicting battery consumption in Canadian conditions.",
+    tags: ["Machine learning", "Decision support", "Aviation", "Optimization"],
+    dateRange: "May 2023-Apr 2024",
+    image: "/ElectriFly/ElectriFly.png",
+    imageAlt: "ElectriFly project interface",
+    collaborators: "Meenakshi Andoorveedu, Peter Twarecki, Joanna Yang, Vikram Bhatt",
+    links: [
+      { label: "Slides", href: "/ElectriFly/ElectriFly%20Slides.pdf", type: "slides" },
+      { label: "Poster", href: "/ElectriFly/ElectriFlyPoster.pdf", type: "poster" }
+    ],
+    awards: ["Management Engineering Design Award", "Gregory Zhang - e-Zinc Award"]
   }
 ];

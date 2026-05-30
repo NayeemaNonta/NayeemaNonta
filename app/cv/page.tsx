@@ -142,7 +142,6 @@ export default function CvPage() {
         <ResumeBlock title="Presentations" items={presentations} />
         <ResumeBlock title="Industry and Professional Experience" items={professionalExperience} />
         <ResumeBlock title="Reviewing Activity" items={reviewingActivity} />
-        <ResumeBlock title="Teaching Assistant Experience" items={teachingAssistantExperience} />
 
         <section className="card p-6">
           <h2 className="text-sm font-semibold uppercase text-accent">Technical Skills</h2>
@@ -164,6 +163,7 @@ export default function CvPage() {
         <ResumeBlock title="Projects" items={selectedProjects} />
         <TextListBlock title="Technical Certifications" items={technicalCertifications} />
         <CourseworkBlock />
+        <ResumeBlock title="Teaching Assistant Experience" items={teachingAssistantExperience} />
       </div>
     </main>
   );
