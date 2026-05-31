@@ -41,21 +41,22 @@ export const coursework = [
 
 export const researchExperience: ResumeItem[] = [
   {
-    title: "Research Assistant",
-    organization: "University of Waterloo, Critical ML Lab",
-    dateRange: "Dec 2024-Present",
+    title: "Research Assistant - Machine Learning",
+    organization: "University of Waterloo | Critical ML Lab",
+    dateRange: "December 2024-Present",
     details: [
-      "Developed SAGE (Safety-Aware Gated Editing), a two-stage activation editing method for safe low-resource LLM fine-tuning, resulting in two ICLR 2026 workshop papers.",
-      "Contributed to SubTrack++ (NeurIPS 2025), a memory- and time-efficient full-parameter LLM training method via gradient subspace tracking; implemented method components and additional baselines, ran ablation studies, and scalability analysis.",
+      "Developed SAGE, an ongoing research project on safer low-resource LLM fine-tuning using refusal-geometry-aware activation editing (2 ICLR workshop papers); currently extending it with adaptive refusal geometry.",
+      "Co-author on SubTrack++ (NeurIPS '25), a memory- and time-efficient full-parameter LLM training method via gradient subspace tracking; implemented method components and additional baselines, ran ablation studies, and scalability analysis.",
       "Conducted research on AI adoption barriers in clinical and healthcare settings in collaboration with Waterloo Regional Health Network; abstract presented at the Institute for Healthcare Improvement Forum."
     ]
   },
   {
-    title: "Research Assistant",
-    organization: "University of Waterloo, Prof. Fatma Gzara",
-    dateRange: "Jan 2024-May 2025",
+    title: "Research Assistant - Network Optimization",
+    organization: "University of Waterloo | Prof. Fatma Gzara",
+    dateRange: "January 2024-May 2025",
     details: [
-      "Developed an efficient label-setting algorithm to solve an NP-hard shortest path problem involving rolling constraints, optimizing UAV path planning for cost while maintaining required base tower signal strength."
+      "Developed exact algorithms for an NP-hard constrained shortest path problem on DAGs, cyclic graphs, and SINR-based maps, to optimize UAV path cost while maintaining minimum signal strength to base towers.",
+      "Benchmarked algorithms against a MILP formulation solved with Gurobi, achieving 17.87x average speedup and up to 206.33x faster runtime on highly constrained large instances."
     ]
   }
 ];
@@ -80,58 +81,32 @@ export const professionalExperience: ResumeItem[] = [
   {
     title: "Machine Learning Software Developer Intern",
     organization: "CoreAVI",
-    dateRange: "Sep 2023-Dec 2023",
-    details: [
-      "Developed four computer vision projects in C to demonstrate CoreAVI's Vulkan SC based safety-critical AI library, implementing models such as MobileNetV2 CNN and non-linear SVM with RBF kernel from scratch for image classification and frequency domain image filtering.",
-      "Created a Python script to streamline installation of PyTorch model data, converting from torchvision to ONNX to NNEF for deterministic inference in a safety-critical API.",
-      "Wrote image preprocessing scripts to resize, format, and convert input data for compatibility with different deep learning model architectures."
-    ]
+    dateRange: "Sep 2023-Dec 2023"
   },
   {
     title: "Innovation Catalyst Intern (Rapid App Development)",
     organization: "Nuclear Promise X",
-    dateRange: "Jan 2023-Apr 2023",
-    details: [
-      "Developed Power Apps applications to digitize nuclear PMIS procedures for Bruce Power and Ontario Power Generation, increasing efficiency and reliability in accessing and managing records.",
-      "Implemented database stored procedures and views using SQL, reducing database maintenance time by 15%.",
-      "Fine-tuned an LLM to streamline product user-guide generation using feature engineering and data validation.",
-      "Built and tested Azure DevOps pipelines to establish CI/CD and streamline deployment."
-    ]
+    dateRange: "Jan 2023-Apr 2023"
   },
   {
     title: "System Administrator Intern",
     organization: "CoreAVI",
-    dateRange: "May 2022-August 2022",
-    details: [
-      "Investigated non-compliant devices using Microsoft Intune and JIRA. Triaged and resolved issues and used root cause analysis to prevent future incidents, leading to a 74% reduction in non-compliant devices over a quarter.",
-      "Improved ticket throughput by scaling access workflows with Power Automate and swimlane analysis, reducing redundant approvals while maintaining least-privilege governance."
-    ]
+    dateRange: "May 2022-August 2022"
   },
   {
     title: "Business Systems Intern",
     organization: "Nissan",
-    dateRange: "Sep 2021-Dec 2021",
-    details: [
-      "Coordinated agile daily scrums and cross-functional sprint planning for Salesforce CRM deployment.",
-      "Created and executed 150+ UAT/SIT tests for CRM, ensuring functional requirements were met.",
-      "Managed business-critical issues on JIRA; escalated risks to vendors, managed stakeholders, and processed change requests."
-    ]
+    dateRange: "Sep 2021-Dec 2021"
   },
   {
     title: "IT Solution Specialist Intern",
     organization: "Sentia",
-    dateRange: "Jan 2021-May 2021",
-    details: [
-      "Automated and digitized manual processes, and improved IT change management workflow by applying Microsoft Solutions Framework and ITIL guidelines."
-    ]
+    dateRange: "Jan 2021-May 2021"
   },
   {
     title: "Digital Retention Analyst Intern",
     organization: "University of Waterloo",
-    dateRange: "Jun 2020-Aug 2020",
-    details: [
-      "Conducted competitive analysis of communication platforms to develop solutions that improved online education delivery and student connectivity during COVID-19."
-    ]
+    dateRange: "Jun 2020-Aug 2020"
   }
 ];
 
