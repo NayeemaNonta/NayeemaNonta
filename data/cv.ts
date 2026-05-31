@@ -101,10 +101,10 @@ export const professionalExperience: ResumeItem[] = [
   {
     title: "System Administrator Intern",
     organization: "CoreAVI",
-    dateRange: "May 2022-Aug 2022",
+    dateRange: "May 2022-August 2022",
     details: [
-      "Investigated non-compliant devices using Microsoft Intune and JIRA; triaged and resolved issues with root-cause analysis, leading to a 74% reduction in non-compliant devices over a quarter.",
-      "Optimized processes for scalability via Power Automate and minimized permission bottlenecks by limiting access requests on critical paths to essentials."
+      "Investigated non-compliant devices using Microsoft Intune and JIRA. Triaged and resolved issues and used root cause analysis to prevent future incidents, leading to a 74% reduction in non-compliant devices over a quarter.",
+      "Improved ticket throughput by scaling access workflows with Power Automate and swimlane analysis, reducing redundant approvals while maintaining least-privilege governance."
     ]
   },
   {
