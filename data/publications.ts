@@ -25,7 +25,7 @@ export const publications: Publication[] = [
     statusTone: "blue",
     summary:
       "A systematic framework for stress-testing LLM safety under fine-tuning and tampering.",
-    tags: ["LLM safety", "Tamper resistance", "Benchmarking", "Evaluation", "KDD"],
+    tags: ["LLM safety", "Tamper resistance", "Benchmarking", "Evaluation", "KDD", "Oral"],
     links: [
       { label: "OpenReview", href: "https://openreview.net/forum?id=R5TNXfdPn8", type: "paper" },
       { label: "Code", href: "https://github.com/criticalml-uw/TamperBench", type: "code" }
