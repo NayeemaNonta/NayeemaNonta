@@ -35,6 +35,7 @@ export type Publication = {
   bibtex?: string;
   includeInCv?: boolean;
   sortYear?: number;
+  metaBadges?: string[];
 };
 
 export type Project = {

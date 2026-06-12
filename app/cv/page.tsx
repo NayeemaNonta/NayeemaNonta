@@ -129,6 +129,11 @@ export default function CvPage() {
               <article key={`${publication.title}-${publication.venue}`}>
                 <div className="mb-2 flex flex-wrap gap-2">
                   <Badge tone={publication.statusTone}>{publication.status}</Badge>
+                  {publication.metaBadges?.map((badge) => (
+                    <Badge key={badge} tone={publication.statusTone}>
+                      {badge}
+                    </Badge>
+                  ))}
                   <Badge>{publication.venue}</Badge>
                   <Badge>{publication.year}</Badge>
                 </div>

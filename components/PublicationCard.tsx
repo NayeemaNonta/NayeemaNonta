@@ -14,6 +14,11 @@ export function PublicationCard({ publication }: PublicationCardProps) {
         <div className="min-w-0 lg:flex-1 lg:pr-6">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge tone={publication.statusTone}>{publication.status}</Badge>
+            {publication.metaBadges?.map((badge) => (
+              <Badge key={badge} tone={publication.statusTone}>
+                {badge}
+              </Badge>
+            ))}
             <Badge>{publication.venue}</Badge>
             <Badge>{publication.year}</Badge>
           </div>
