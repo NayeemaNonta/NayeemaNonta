@@ -2,12 +2,12 @@ import type { LinkItem } from "./types";
 
 export const profile = {
   name: "Nayeema Nonta",
-  role: "PhD student / LLM systems, post-training, and efficient adaptation",
+  role: "Graduate student / LLM systems, post-training, and efficient adaptation",
   affiliation: "University of Waterloo, Critical ML Lab",
   location: "Waterloo, Ontario",
   tagline: "ML systems, safe adaptation, and efficient training.",
   identity:
-    "I'm a PhD student at the Critical ML Lab researching LLM systems, with an emphasis on post-training, efficient adaptation, tamper resistance, and reliable model behavior.",
+    "I'm a graduate student at the Critical ML Lab researching LLM systems, with an emphasis on post-training, efficient adaptation, tamper resistance, and reliable model behavior.",
   image: "/images/NN.png",
   email: "nnonta@uwaterloo.ca",
   links: [

@@ -7,13 +7,13 @@ export type SkillGroup = {
 
 export const education: ResumeItem[] = [
   {
-    title: "PhD Student, Management Science and Engineering",
+    title: "Master of Applied Science, Management Science and Engineering",
     organization: "University of Waterloo, Waterloo, Canada",
     dateRange: "May 2025-Present",
     details: [
       "Cumulative GPA: 93.25",
-      "Research areas: AI model security, safeguard preservation, safety benchmarking, data- and compute-efficient training.",
-      "Supervisor: Prof. Sirisha Rambhatla."
+      "Research areas: AI model security, safeguard preservation, safety benchmarking, data- and compute-efficient training."
+      // "Supervisor: Prof. Sirisha Rambhatla."
     ]
   },
   {
