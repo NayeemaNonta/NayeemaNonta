@@ -6,3 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 .env*.local
 *.tsbuildinfo
+
+# Temporarily retired site sections kept locally for later restoration.
+/archive/

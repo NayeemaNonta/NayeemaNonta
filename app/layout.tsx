@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nayeema Nonta | LLM Systems Researcher",
     description:
-      "Research, publications, projects, news, media, and CV for Nayeema Nonta.",
+      "Research, publications, news, media, and CV for Nayeema Nonta.",
     url: siteUrl,
     siteName: "Nayeema Nonta",
     images: [

@@ -10,7 +10,8 @@ const navItems = [
   // Research page is temporarily hidden; restore this item when app/research/page.tsx is restored.
   // { label: "Research", href: "/research" },
   { label: "Publications", href: "/publications" },
-  { label: "Projects", href: "/projects" },
+  // Projects are temporarily archived; restore this item with app/projects/.
+  // { label: "Projects", href: "/projects" },
   // Teaching / Service page is temporarily hidden; restore this item when app/teaching/page.tsx is restored.
   // { label: "Teaching / Service", href: "/teaching" },
   { label: "News / Media", href: "/news" },

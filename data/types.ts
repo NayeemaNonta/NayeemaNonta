@@ -38,18 +38,6 @@ export type Publication = {
   metaBadges?: string[];
 };
 
-export type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  dateRange: string;
-  links: TaggedLink[];
-  image?: string;
-  imageAlt?: string;
-  collaborators?: string;
-  awards?: string[];
-};
-
 export type ServiceItem = {
   title: string;
   organization: string;
