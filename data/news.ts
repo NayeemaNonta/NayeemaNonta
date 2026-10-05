@@ -10,6 +10,17 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    title: "Major security weaknesses found in leading open AI models",
+    date: "Aug 2026",
+    tag: "Media",
+    description:
+      "Featured in Waterloo News for our TamperBench work, which systematically stress-tested 21 leading open-weight language models and found that every model tested could be modified to bypass its safety protections.",
+    href: "https://uwaterloo.ca/news/media/major-security-weaknesses-found-leading-open-ai-models",
+    image: "/images/tamperbench_news.jpg",
+    imageAlt:
+      "A person typing at a keyboard with visual representations of artificial intelligence and cybersecurity warnings"
+  },
+  {
     title: "Making powerful AI more accessible to everyone",
     date: "Dec 2025",
     tag: "Media",

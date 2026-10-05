@@ -14,8 +14,8 @@ const navItems = [
   // { label: "Projects", href: "/projects" },
   // Teaching / Service page is temporarily hidden; restore this item when app/teaching/page.tsx is restored.
   // { label: "Teaching / Service", href: "/teaching" },
-  { label: "News / Media", href: "/news" },
-  { label: "CV", href: "/cv" }
+  // CV is temporarily archived; restore it from archive/cv-section/.
+  { label: "News / Media", href: "/news" }
 ];
 
 export function Navbar() {

@@ -11,7 +11,6 @@ export const profile = {
   image: "/images/NN.png",
   email: "nnonta@uwaterloo.ca",
   links: [
-    { label: "CV", href: "/cv" },
     {
       label: "Google Scholar",
       href: "https://scholar.google.com/citations?user=mkqfdZEAAAAJ&hl=en&oi=ao"
