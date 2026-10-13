@@ -31,13 +31,6 @@ export default function HomePage() {
               {profile.identity}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={assetPath("/Nayeema_Nonta_CV.pdf")}
-                download="Nayeema_Nonta_CV.pdf"
-                className="button-primary"
-              >
-                Download CV
-              </a>
               {profile.links.map((link) => (
                 <SmartLink
                   key={link.label}
